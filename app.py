@@ -47,5 +47,12 @@ def login():
 
     return render_template("login.html")
 
+@app.route("/dashboard")
+def dashboard():
+    name = request.args.get("name", "User")
+    return render_template("dashboard.html", name=name)
+
+
 if __name__ == "__main__":
     app.run()
+
